@@ -56,4 +56,4 @@ router.post('/', function(req, res){
     res.sendFile("A token has been sent to your email address")
 })
 
-module.export= router;
+module.exports= router;

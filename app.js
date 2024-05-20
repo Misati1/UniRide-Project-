@@ -30,7 +30,7 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookie());
-const PORT =process.env.PORT||3000
+const PORT =process.env.PORT||3001
 server.listen(PORT,()=>console.log(`server running on port ${PORT}`))
 
 app.use('/signup', signup);

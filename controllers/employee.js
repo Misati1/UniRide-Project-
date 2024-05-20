@@ -1,9 +1,12 @@
 var express = require('express');
+const { check } = require('express-validator');
+
 var router = express.Router();
 var bodyParser = require('body-parser');
 const { validationResult } = require('express-validator');
 var db = require.main.require('./models/db_controller');
-const {check, validationResult} = require('express-validator');
+//const {check, validationResult} = require('express-validator');
+
 
 module.exports=router;
 

@@ -8,7 +8,7 @@ var mysql = require('mysql');
 var session = require('express-session');
 var sweetalert = require('sweetalert2');
 
-const {check, validationResult} = require('express-validator');
+//const {check, validationResult} = require('express-validator');
 
 var con = mysql.createConnection({
     host:'localhost',
