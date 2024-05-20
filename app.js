@@ -30,8 +30,10 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookie());
-const PORT =process.env.PORT||3001
+const PORT =process.env.PORT||3000
 server.listen(PORT,()=>console.log(`server running on port ${PORT}`))
+
+
 
 app.use('/signup', signup);
 app.use('/login', login);
@@ -42,3 +44,5 @@ app.use('/employee', employee);
 app.use('/ride', ride);
 app.use('/receipt', receipt);
 app.use('/complain', complain);
+
+app.use ('/inbox',inbox);

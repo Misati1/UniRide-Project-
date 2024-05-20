@@ -8,9 +8,9 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json());
 
 module.exports = router;
-//router.get('/', function(req, res){
-//    res.render('verify.ejs')
-//})
+router.get('/', function(req, res){
+    res.render('verify.ejs')
+})
 
 router.post('/', function(req, res){
     var id = req.body.id;
