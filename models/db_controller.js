@@ -129,7 +129,7 @@ module.exports.deleteleave = function(id, callback){
     con.query(query, callback)
 }
 
-module.exports.getAlllemployee = function(callback){
+module.exports.getAllemployee = function(callback){
     var query = "select * from employee"
     con.query(query, callback)
 }
@@ -183,5 +183,15 @@ module.exports.edit_ride=function(id, p_name, department, d_name, date, time, em
 
 module.exports.deleteride= function(id, callback){
     var query = "delete from ride where id="+id;
+    con.query(query, callback);
+}
+
+module.exports.postcomplain=function(message, name, email, subject, callback){
+    var query = "insert into complain(message, name, email, subject) values('"+message+"', '"+name+"', '"+email+"', '"+subject+"')"
+    con.query(query, callback);
+}
+
+module.exports.getcomplain= function(callback){
+    var query = "select * from complain";
     con.query(query, callback);
 }
