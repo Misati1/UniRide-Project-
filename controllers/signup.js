@@ -1,16 +1,20 @@
-const { check } = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var db = require.main.require('./models/db_controller');
 var mysql = require('mysql');
-var modemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 var randomToken = require('random-token');
-const {checl, validationResult} = require('express-validator');
+const {check, validationResult} = require('express-validator');
 
 router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json());
+
+router.get('/', (req, res) => {
+    res.render('signup');
+});
 
 router.post('/', [check('username').notEmpty().withMessage("Username is Required"),
     check('password').notEmpty().withMessage("Password is Required"),
