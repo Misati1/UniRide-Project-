@@ -42,7 +42,7 @@ app.use('/reset', reset);
 app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
-app.use('/receipt', receipt);
-app.use('/complain', complain);
+//app.use('/receipt', receipt);
+//app.use('/complain', complain);
 
-app.use ('/inbox',inbox);
+//app.use ('/inbox',inbox);
