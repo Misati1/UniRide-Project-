@@ -1,1 +1,1 @@
-UNIRIDE - Reliable Shared Transport System for University Stusents in Nairobi and its Environs 
+UNIRIDE - Reliable Shared Transport System for University Students in Nairobi and its Environs 
