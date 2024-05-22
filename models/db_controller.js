@@ -31,10 +31,14 @@ module.exports.signup = function(username, email, password, status, callback){
     })
 }
 
+
+
 module.exports.verify= function(username, email, token, callback){
     var query= "INSERT INTO `verify`(`username`, `email`, `token`) VALUES ('"+username+"', '"+email+"', '"+token+"')"
     con.query(query, callback)
 }
+
+
 
 module.exports.getuserid= function(email,callback){
     var query= "SELECT * FROM `verify` WHERE email = '"+email+"'"
@@ -47,10 +51,14 @@ module.exports.matchtoken= function(id,token,callback){
     console.log(query);
 }
 
-module.exports.updateverify= function(email, email_status, callback){
-    var query= "UPDATE `users` set `email_status` = '"+email_status+"' where `email  = '"+email_status+"'"
-    con.query(query, callback);
-    console.log(query);
+//module.exports.updateverify= function(email, email_status, callback){
+//    var query= "UPDATE `users` set `email_status` = '"+email_status+"' where `email  = '"+email_status+"'"
+//    con.query(query, callback);
+//    console.log(query);
+//}
+
+module.exports.updateverify = function(email, email_status, callback){
+    con.query('UPDATE `users` SET `email_status` = ? WHERE `email` = ?', [email_status, email], callback);
 }
 
 module.exports.findOne = function(email, callback){

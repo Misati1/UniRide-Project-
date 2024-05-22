@@ -41,3 +41,17 @@ app.use('/ride', ride);
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+require('dotenv').config();
+
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === 'true', // Convert to boolean
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    }
+});
