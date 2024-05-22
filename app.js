@@ -37,14 +37,27 @@ app.use('/reset', reset);
 app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
-<<<<<<< HEAD
+
 //app.use('/receipt', receipt);
 //app.use('/complain', complain);
 
-//app.use ('/inbox',inbox);
-=======
+//app.use ('/inbox',inbox
 
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
->>>>>>> 79c8b8707975b9df1f7f81bfdc0a0f9e7343a70d
+
+require('dotenv').config();
+
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === 'true', // Convert to boolean
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    }
+});
+
