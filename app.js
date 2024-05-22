@@ -38,6 +38,11 @@ app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
 
+//app.use('/receipt', receipt);
+//app.use('/complain', complain);
+
+//app.use ('/inbox',inbox
+
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
@@ -55,3 +60,4 @@ const transporter = nodemailer.createTransport({
         pass: process.env.SMTP_PASS
     }
 });
+
