@@ -7,7 +7,7 @@ var db = require.main.require('./models/db_controller');
 var mysql = require('mysql');
 var nodemailer = require('nodemailer');
 var randomToken = require('random-token');
-const {check, validationResult} = require('express-validator');
+//const {check, validationResult} = require('express-validator');
 
 router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json());
