@@ -1,4 +1,14 @@
 const { check, validationResult } = require('express-validator');
+<<<<<<< Updated upstream
+=======
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
+const db = require.main.require('./models/db_controller');
+const nodemailer = require('nodemailer');
+const randomToken = require('random-token');
+require('dotenv').config();
+>>>>>>> Stashed changes
 
 var express = require('express');
 var router = express.Router();
@@ -47,9 +57,15 @@ router.post('/', [check('username').notEmpty().withMessage("Username is Required
             host:"smtp.gmail.com",
             port: 465,
             secure: true,
+<<<<<<< Updated upstream
             auth:{
                 user:"ephraimloch@gmail.com", 
                 pass:"88Carterraid&"
+=======
+            auth: {
+                user: "ephraimloch@gmail.com",
+                pass: "rvfgdjixhtmkybji" // Replace with your actual password or use environment variables for security
+>>>>>>> Stashed changes
             }
         });
         var mailOptions = {
