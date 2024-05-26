@@ -37,17 +37,8 @@ app.use('/reset', reset);
 app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
-<<<<<<< HEAD
-//app.use('/receipt', receipt);
-//app.use('/complain', complain);
 
-//app.use ('/inbox',inbox);
-=======
 
-//app.use('/receipt', receipt);
-//app.use('/complain', complain);
-
-//app.use ('/inbox',inbox
 
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
@@ -67,4 +58,3 @@ const transporter = nodemailer.createTransport({
     }
 });
 
->>>>>>> e7f18d49015bb1a907e63f32f5b99554d8b22502
