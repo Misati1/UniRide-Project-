@@ -44,10 +44,7 @@ app.use('/index', indexRouter);
 //app.use('/home', home);
 //app.use('/submit', formSubmission);
 
-//app.use('/receipt', receipt);
-//app.use('/complain', complain);
 
-//app.use ('/inbox',inbox
 
 /////////////////////////////////////////////////
 app.get('/', (req, res) => {
