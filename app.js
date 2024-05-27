@@ -13,6 +13,9 @@ var reset = require('./controllers/reset_controller');
 var drivers = require('./controllers/drivers_controller');
 var employee = require('./controllers/employee');
 var ride = require('./controllers/ride');
+const indexRouter = require('./controllers/index');
+//var home = require('./controllers');
+//const formSubmission = require('./routes/form-submission');
 
 var app = express();
 
@@ -37,11 +40,25 @@ app.use('/reset', reset);
 app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
+app.use('/index', indexRouter);
+//app.use('/home', home);
+//app.use('/submit', formSubmission);
 
 //app.use('/receipt', receipt);
 //app.use('/complain', complain);
 
 //app.use ('/inbox',inbox
+
+/////////////////////////////////////////////////
+app.get('/', (req, res) => {
+    res.render('index', { user: req.session.user });
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+////////////////////////////////////////////////////////
+
 
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);

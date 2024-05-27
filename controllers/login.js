@@ -23,13 +23,20 @@ router.use(session({
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-// Define a GET route to render the login form
+//Define a GET route to render the login form
 router.get('/', (req, res) => {
-    res.render('login'); // Assuming you have a login.ejs file in your views directory
+   res.render('login'); 
 });
 
+// router.get('/', (req, res) => {
+//     // Check if user is already logged in
+//     if (req.session.loggedin) {
+//         return res.redirect('/home'); // Redirect to home page if already logged in
+//     }
+//     res.render('login'); 
+// });
+
 router.post('/', [
-    check('username').notEmpty().withMessage("Username is required"),
     check('password').notEmpty().withMessage("Password is required")
 ], function (req, res) {
     const errors = validationResult(req);
@@ -50,18 +57,18 @@ router.post('/', [
                     var status = results[0].email_status;
                     if (status === "not verified") {
                         res.send("Please Verify your email");
-                    } else {
-                        sweetalert.fire('Logged in');
-                        res.redirect('/home');
-                    }
-                } else {
-                    res.send("Incorrect Username or Password");
+                    } 
+                } 
+                else {
+                    //res.send("Incorrect Username or Password");
+                    res.redirect('/index');
                 }
                 res.end();
             });
     } else {
-        res.send("Please enter your username and password");
-        res.end();
+        sweetalert.fire('Logged in');
+        res.redirect('/index');
+       // res.end();
     }
 });
 

@@ -33,8 +33,8 @@ module.exports.signup = function(username, email, password, status, callback){
 
 
 
-module.exports.verify= function(username, email, token, callback){
-    var query= "INSERT INTO `verify`(`username`, `email`, `token`) VALUES ('"+username+"', '"+email+"', '"+token+"')"
+module.exports.verify= function(id,username, email, token, callback){
+    var query= "INSERT INTO `verify`(`id`,`username`, `email`, `token`) VALUES ('"+id+"','"+username+"', '"+email+"', '"+token+"')"
     con.query(query, callback)
 }
 
