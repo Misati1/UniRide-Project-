@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 0.86em;">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Carousel-Hero.css">
     <link rel="stylesheet" href="assets/css/forms.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
@@ -19,51 +18,84 @@
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-md py-3 bg-def" style="background: #1f1f1f;">
-        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.ejs"><span class="bs-icon-sm bs-icon-rounded text-warning d-flex justify-content-center align-items-center me-2 bs-icon" style="color: rgb(255,154,11);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-96 0 512 512" width="1em" height="1em" fill="currentColor">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.ejs"><span class="bs-icon-sm bs-icon-rounded text-warning d-flex justify-content-center align-items-center me-2 bs-icon" style="color: rgb(255,154,11);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-96 0 512 512" width="1em" height="1em" fill="currentColor">
                         <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                         <path d="M267.5 249.2C290 226.1 304 194.7 304 160c0-70.58-57.42-128-128-128h-32c-70.58 0-128 57.42-128 128c0 34.7 13.99 66.12 36.48 89.19C20.83 272.5 0 309.8 0 352c0 70.58 57.42 128 128 128h64c70.58 0 128-57.42 128-128C320 309.8 299.2 272.5 267.5 249.2zM144 96.01h32c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32c-35.3 0-64-28.7-64-64S108.7 96.01 144 96.01zM192 416H128c-35.3 0-64-28.7-64-64s28.7-64 64-64h64c35.3 0 64 28.7 64 64S227.3 416 192 416z"></path>
-                    </svg></span><span>UniRide</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    </svg></span><span>UniRide</span>
+                </a>
+                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             <div class="collapse navbar-collapse" id="navcol-5">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/signup"><strong>LOGIN/ SIGN UP</strong></a></li>
-                </ul><a class="btn btn-warning ms-md-2 ff-Maven" role="button" href="#" style="background: rgb(255,155,13);">ORDER RIDE!</a>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="#"><strong>Welcome, Sharly</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout"><strong>LOG OUT</strong></a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="login.ejs"><strong>LOGIN/ SIGN UP</strong></a></li>
+                    
+                </ul>
+                <a class="btn btn-warning ms-md-2 ff-Maven btn-nav" role="button" href="#">ORDER RIDE!</a>
             </div>
         </div>
     </nav>
     <section class="py-4">
-        <div class="container">
+        <div class="container-fluid py-3">
             <div class="row mb-1">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>LOGIN</h2>
-                    <p>Welcome back!</p>
+                    <h2>OUR SERVICES</h2>
+                    <p>Get to know what services we offer to our customers</p>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-8">
-                    <form class="p-3 p-xl-4 d-flex align-items-center flex-column" method="post" style="font-family: 'Maven Pro', sans-serif;">
-                        <div class="col-10 mb-3"><input class="form-control form-control" type="email" id="email-1" name="email" placeholder="Email Address*"></div>
-                        <div class="col-10 mb-3"><input class="form-control" type="password" id="password-1" name="password" placeholder="Password*"></div>
-                        <div class="col col-10 d-flex flex-column"><span><a class="mt-1 form-link" href="/forgotpassword" data-bs-target="/forgot pass">Forgot Password?</a></span><span>New Here?Please &nbsp;<a class="form-link" href="/signup" data-bs-target="/forgot pass" style="color: #ff9b0d;">Sign Up</a></span>
-                            <div class="text-decoration-none mt-1"></div>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 mx-2">
+                <div class="col">
+                    <div class="card" style="font-family: Poppins, sans-serif;">
+                        <div class="card-body d-flex align-items-center flex-column"><img class="card-img" src="https://images.unsplash.com/photo-1579667410546-f7079afa0601?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                            <h4 class="card-title mt-4">AFFORDABLE</h4>
+                            <p class="card-text mt-2 mx-1">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                         </div>
-                        <div><button id="loginButton" class="btn btn-primary link-secondary d-block" data-bss-hover-animate="pulse" type="submit" style="border-radius: 0px;padding: 0.85em;font-size: 0.8em;font-family: 'Maven Pro', sans-serif;">LOGIN</button></div>   
-                    </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="font-family: Poppins, sans-serif;">
+                        <div class="card-body d-flex align-items-center flex-column"><img class="card-img" src="https://images.unsplash.com/photo-1600320254374-ce2d293c324e?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                            <h4 class="card-title mt-4">SAFE &amp; SECURE</h4>
+                            <p class="card-text mt-2 mx-1">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="font-family: Poppins, sans-serif;">
+                        <div class="card-body d-flex align-items-center flex-column"><img class="card-img" src="https://images.unsplash.com/37/tEREUy1vSfuSu8LzTop3_IMG_2538.jpg?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                            <h4 class="card-title mt-4">SAVES TIME</h4>
+                            <p class="card-text mt-2 mx-1">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginButton = document.querySelector('#loginButton');
-            loginButton.addEventListener('click', () => {
-                window.location.href = '/home'; // Redirect to home page upon login button click
-            });
-        });
-    </script>
-
+    <section class="py-4">
+        <div class="container">
+            <div class="row mb-1">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2>ABOUT US</h2>
+                    <p>Get to know more about us</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12 col-md-6 d-flex justify-content-center flex-column">
+                    <h1 class="text-center">WHAT WE ARE</h1>
+                    <p><span style="color: rgba(18, 29, 43, 0.6);">UniRide is the first African University Students mobility super-app. We’re making cities for students, offering better alternatives for every purpose a private car serves — including ride-hailing, shared cars and scooters.</span><br><br></p>
+                </div>
+                <div class="col col-12 col-md-6 d-flex justify-content-center"><img class="img-fluid fit-cover" src="https://images.unsplash.com/photo-1539787200876-3c033a7bebcd?q=80&amp;w=1287&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="max-height: 500px;"></div>
+            </div>
+        </div>
+    </section>
     <footer class="text-center" style="max-width: 100%;left: 0;position: relative;box-sizing: border-box;border: 0px;border-top: 1px solid rgb(200, 200, 200);background: #1f1f1f;">
         <div class="container py-4 py-lg-5 px-0">
             <div class="row d-flex justify-content-between" style="font-family: 'Maven Pro', sans-serif;">

@@ -7,9 +7,9 @@ var randomToken = require('random-token');
 var db = require.main.require('./models/db_controller');
 
 
-//router.get('/', function(req, res){
-//    resizeBy.render('resetpassword.ejs');
-//})
+router.get('/', function(req, res){
+    res.render('forgotpassword.ejs');
+})
 
 router.post('/', function(req, res){
     var email = request.boody.email;
@@ -23,18 +23,21 @@ router.post('/', function(req, res){
         var token = randomToken(8);
         db.temp(id, email, token, function(err, resulttwo){
             var output = `<p>Dear User,</p>
-            <p>We have received your request to reset your password.<br>
-             To proceed with setting a new password, please use the following token:</p>
-             <ul>
-             <li>User Id: `+id+`</li>
-             <li>User Token: `+token+`</li>
-             </ul>`
+        <p>Dear Customer,
+
+        We have receiver a request to reset your Password. 
+        <p>Please click on the following link to reset your password.</p>
+        Verification Link: <a href="http://localhost:3000/setpassword"> Reset Password</a>
+        
+        This is an automatically generated email. The link will expire in 10 minutes
+
+        </p>`;
 
              var transoporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth:{
                     user: 'ephraimloch@gmail.com',
-                    pass: '88Carterraid&'
+                    pass: 'rvfgdjixhtmkybji'
                 }
              });
              var mailOptions = {
@@ -53,7 +56,7 @@ router.post('/', function(req, res){
 
         })
     })
-    res.sendFile("A token has been sent to your email address")
+    res.sendFile("The password reset link has been sent to your email address")
 })
 
 module.exports= router;

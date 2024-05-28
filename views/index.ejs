@@ -30,16 +30,11 @@
                 </button>
             <div class="collapse navbar-collapse" id="navcol-5">
                 <ul class="navbar-nav ms-auto">
-                    <% if (user) { %>
-                        <li class="nav-item"><a class="nav-link" href="#">Welcome, Sharly</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                    <% } else { %>
-                        <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/login"><strong>LOGIN/ SIGN UP</strong></a></li>
-                    <% } %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.ejs"><strong>LOGIN/ SIGN UP</strong></a></li>
                 </ul>
-                
                 <a class="btn btn-warning ms-md-2 ff-Maven btn-nav" role="button" href="#">ORDER RIDE!</a>
             </div>
         </div>

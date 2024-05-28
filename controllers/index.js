@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
       return res.status(404).send('User not found');
     }
 
-    res.render('index', { user });
+    res.render('home', { user });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error loading user data');

@@ -28,13 +28,13 @@ router.get('/', (req, res) => {
    res.render('login'); 
 });
 
-// router.get('/', (req, res) => {
-//     // Check if user is already logged in
-//     if (req.session.loggedin) {
-//         return res.redirect('/home'); // Redirect to home page if already logged in
-//     }
-//     res.render('login'); 
-// });
+ router.get('/', (req, res) => {
+     // Check if user is already logged in
+     if (req.session.loggedin) {
+         return res.redirect('/home'); // Redirect to home page if already logged in
+     }
+     res.render('login'); 
+ });
 
 router.post('/', [
     check('password').notEmpty().withMessage("Password is required")
@@ -60,14 +60,14 @@ router.post('/', [
                     } 
                 } 
                 else {
-                    //res.send("Incorrect Username or Password");
-                    res.redirect('/index');
+                    res.send("Incorrect Username or Password");
+                    res.redirect('/login');
                 }
                 res.end();
             });
     } else {
         sweetalert.fire('Logged in');
-        res.redirect('/index');
+        res.redirect('/home');
        // res.end();
     }
 });

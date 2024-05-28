@@ -14,6 +14,8 @@ var drivers = require('./controllers/drivers_controller');
 var employee = require('./controllers/employee');
 var ride = require('./controllers/ride');
 const indexRouter = require('./controllers/index');
+const setPasswordController = require('./controllers/setpassword');
+const homeRouter = require('./controllers/home');
 //var home = require('./controllers');
 //const formSubmission = require('./routes/form-submission');
 
@@ -36,26 +38,22 @@ app.use(session({
 app.use('/signup', signup);
 app.use('/login', login); // New login route
 app.use('/verify', verify);
-app.use('/reset', reset);
+app.use('/forgotpassword', reset);
 app.use('/drivers', drivers);
 app.use('/employee', employee);
 app.use('/ride', ride);
 app.use('/index', indexRouter);
-//app.use('/home', home);
+app.use('/setpassword', setPasswordController);
+app.use('/home', homeRouter);
 //app.use('/submit', formSubmission);
 
-
-
-/////////////////////////////////////////////////
-app.get('/', (req, res) => {
-    res.render('index', { user: req.session.user });
+app.get('/home', (req, res) => {
+    res.render('home', { user: req.session.user });
 });
 
 app.get('/login', (req, res) => {
     res.render('login');
 });
-////////////////////////////////////////////////////////
-
 
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
