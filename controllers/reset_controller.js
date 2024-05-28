@@ -13,13 +13,13 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res){
     var email = request.boody.email;
-    db.findOne(email, function(err, resultone){
+    db.findOne(email, function(err, result){
         if(!resultone){
             console.log("Email does not exist");
             response.send("Mail does not exist");
         }
-        var id = resultone[0].id;
-        var email = resultone[0].email;
+        var id = result[0].id;
+        var email = result[0].email;
         var token = randomToken(8);
         db.temp(id, email, token, function(err, resulttwo){
             var output = `<p>Dear User,</p>

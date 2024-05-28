@@ -62,7 +62,7 @@ module.exports.updateverify = function(email, email_status, callback){
 }
 
 module.exports.findOne = function(email, callback){
-    var query = "select * users where email = '"+email+"'"
+    var query = "select * FROM `verify` where email = '"+email+"'"
     con.query(query, callback);
     console.log(query);
 }
