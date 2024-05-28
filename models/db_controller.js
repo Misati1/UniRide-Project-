@@ -68,11 +68,11 @@ module.exports.findOne = function(email, callback){
 }
 
 
-module.exports.temp = function(id, email,token, callback){
-    var query = "insert into `temp`(`id`,`email`,`token`) values('"+id+"','"+email+"','"+token+"') "
-    con.query(query, callback);
-    console.log(query);
-}
+// module.exports.temp = function(id, email,token, callback){
+//     var query = "insert into `temp`(`id`,`email`,`token`) values('"+id+"','"+email+"','"+token+"') "
+//     con.query(query, callback);
+//     console.log(query);
+// }
 
 module.exports.add_driver = function(first_name,last_name, dob, gender, address, phone, image, department, biography, callback){
     var query = "insert into `doctor`(`first_name`,`last_name`,`email`, `gender`,`address`,`phone`,`image`,`department`,`biography`) values('"+first_name+"','"+last_name+"','"+email+"','"+dob+"','"+gender+"','"+address+"', '"+phone+"','"+image+"','"+department+"','"+biography+"') "
@@ -110,69 +110,69 @@ module.exports.searchDoc = function(id, callback){
     console.log(query);
 }
 
-module.exports.getalldept = function(id, callback){
-    var query = "select * from departments"
-    con.query(query, callback);
-    console.log(query);
-}
+// module.exports.getalldept = function(id, callback){
+//     var query = "select * from departments"
+//     con.query(query, callback);
+//     console.log(query);
+// }
 
-module.exports.getleavebyid = function(id, callback){
-    var query = "select * from leaves where id="+id;
-    con.query(query, callback)
-}
+// module.exports.getleavebyid = function(id, callback){
+//     var query = "select * from leaves where id="+id;
+//     con.query(query, callback)
+// }
 
-module.exports.getAllleave = function(callback){
-    var query = "select * from leaves"
-    con.query(query, callback)
-}
+// module.exports.getAllleave = function(callback){
+//     var query = "select * from leaves"
+//     con.query(query, callback)
+// }
 
-module.exports.add_leave= function(name, id, type, from, to, reason, callback){
-    var query= "Insert into `leaves` (`employee`,`emp_id`, `leave_type`,`date_from`,`date_to`,`reason`) values('"+name+"', '"+id+"', '"+type+"', '"+from+"', '"+to+"','"+reason+"')"
-    console.log(query)
-    con.query(query, callback);
-}
+// module.exports.add_leave= function(name, id, type, from, to, reason, callback){
+//     var query= "Insert into `leaves` (`employee`,`emp_id`, `leave_type`,`date_from`,`date_to`,`reason`) values('"+name+"', '"+id+"', '"+type+"', '"+from+"', '"+to+"','"+reason+"')"
+//     console.log(query)
+//     con.query(query, callback);
+// }
 
-module.exports.deleteleave = function(id, callback){
-    var query = "delete from leaves where id="+id;
-    con.query(query, callback)
-}
+// module.exports.deleteleave = function(id, callback){
+//     var query = "delete from leaves where id="+id;
+//     con.query(query, callback)
+// }
 
-module.exports.getAllemployee = function(callback){
-    var query = "select * from employee"
-    con.query(query, callback)
-}
+// module.exports.getAllemployee = function(callback){
+//     var query = "select * from employee"
+//     con.query(query, callback)
+// }
 
-module.exports.add_employee= function(name,email ,email, contact, join_date, role, salary, callback){
-    var query= "Insert into `employee` (`name`,`email`, `contact`,`join_date`,`role`,`salary`) values('"+name+"', '"+email+"', '"+contact+"', '"+join_date+"', '"+role+"','"+salary+"')"
-    console.log(query)
-    con.query(query, callback);
-}
+// module.exports.add_employee= function(name,email ,email, contact, join_date, role, salary, callback){
+//     var query= "Insert into `employee` (`name`,`email`, `contact`,`join_date`,`role`,`salary`) values('"+name+"', '"+email+"', '"+contact+"', '"+join_date+"', '"+role+"','"+salary+"')"
+//     console.log(query)
+//     con.query(query, callback);
+// }
 
-module.exports.searchEmp = function(key, callback){
-    var query = "select * from employee where name like "%"'+key+''%' "
-    con.query(query, callback);
-    console.log(query);
-}
+// module.exports.searchEmp = function(key, callback){
+//     var query = "select * from employee where name like "%"'+key+''%' "
+//     con.query(query, callback);
+//     console.log(query);
+// }
 
-module.exports.deleteEmp=function(id, callback){
-    var query = "delete from employee where id="+id;
-    con.query(query, callback)
-}
+// module.exports.deleteEmp=function(id, callback){
+//     var query = "delete from employee where id="+id;
+//     con.query(query, callback)
+// }
 
-module.exports.editEmp=function(id, name, email, contact, join_date, role, callback){
-    var query = "update `employee` set `name` = '"+name+"', `email`= '"+email+"',`contact`= '"+contact+"',`join_date`= '"+join_date+"',`role`= '"+role+"' where id ="+id;
-    con.query(query, callback);
-}
+// module.exports.editEmp=function(id, name, email, contact, join_date, role, callback){
+//     var query = "update `employee` set `name` = '"+name+"', `email`= '"+email+"',`contact`= '"+contact+"',`join_date`= '"+join_date+"',`role`= '"+role+"' where id ="+id;
+//     con.query(query, callback);
+// }
 
-module.exports.getEmployeebyId=function(id, callback){
-    var query = "select * from employee where id="+id;
-    con.query(query, callback)
-}
+// module.exports.getEmployeebyId=function(id, callback){
+//     var query = "select * from employee where id="+id;
+//     con.query(query, callback)
+// }
 
-module.exports.edit_leave=function(id, name, leave_type, from, to, reason, callback){
-    var query = "update `leaves` set `employee` = '"+name+"', `leave_type`= '"+leave_type+"',`date_from`= '"+from+"',`date_to`= '"+to+"',`reason`= '"+reason+"' where id ="+id;
-    con.query(query, callback);
-}
+// module.exports.edit_leave=function(id, name, leave_type, from, to, reason, callback){
+//     var query = "update `leaves` set `employee` = '"+name+"', `leave_type`= '"+leave_type+"',`date_from`= '"+from+"',`date_to`= '"+to+"',`reason`= '"+reason+"' where id ="+id;
+//     con.query(query, callback);
+// }
 
 module.exports.add_ride = function(p_name, department, d_name, date, time, email, phone, callback){
     var query= "insert into ride (passenger_name, department, driver_name, date, time, email, phone) values ('"+p_name+"', '"+department+"', '"+d_name+"', '"+date+"', '"+time+"', '"+email+"', '"+phone+"')";
@@ -194,12 +194,12 @@ module.exports.deleteride= function(id, callback){
     con.query(query, callback);
 }
 
-module.exports.postcomplain=function(message, name, email, subject, callback){
-    var query = "insert into complain(message, name, email, subject) values('"+message+"', '"+name+"', '"+email+"', '"+subject+"')"
-    con.query(query, callback);
-}
+// module.exports.postcomplain=function(message, name, email, subject, callback){
+//     var query = "insert into complain(message, name, email, subject) values('"+message+"', '"+name+"', '"+email+"', '"+subject+"')"
+//     con.query(query, callback);
+// }
 
-module.exports.getcomplain= function(callback){
-    var query = "select * from complain";
-    con.query(query, callback);
-}
+// module.exports.getcomplain= function(callback){
+//     var query = "select * from complain";
+//     con.query(query, callback);
+// }
