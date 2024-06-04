@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Uniride</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Carousel-Hero.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md py-3 bg-def" style="background: #1f1f1f;">
+        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="index.ejs"><span class="bs-icon-sm bs-icon-rounded text-warning d-flex justify-content-center align-items-center me-2 bs-icon" style="color: rgb(255,154,11);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-96 0 512 512" width="1em" height="1em" fill="currentColor">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M267.5 249.2C290 226.1 304 194.7 304 160c0-70.58-57.42-128-128-128h-32c-70.58 0-128 57.42-128 128c0 34.7 13.99 66.12 36.48 89.19C20.83 272.5 0 309.8 0 352c0 70.58 57.42 128 128 128h64c70.58 0 128-57.42 128-128C320 309.8 299.2 272.5 267.5 249.2zM144 96.01h32c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32c-35.3 0-64-28.7-64-64S108.7 96.01 144 96.01zM192 416H128c-35.3 0-64-28.7-64-64s28.7-64 64-64h64c35.3 0 64 28.7 64 64S227.3 416 192 416z"></path>
+                    </svg></span><span>UniRide</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/login"><strong>LOGIN/ SIGN UP</strong></a></li>
+                </ul><a class="btn btn-warning ms-md-2 ff-Maven" role="button" href="#" style="background: rgb(255,155,13);">ORDER RIDE!</a>
+            </div>
+        </div>
+    </nav>
+    <section class="py-4">
+        <div class="container">
+            <div class="row mb-1">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2>SIGN UP</h2>
+                    <p>Glad you are joining us</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8">
+                    <form class="p-3 p-xl-4 d-flex align-items-center flex-column" method="post" style="font-family: 'Maven Pro', sans-serif;">
+                        <div class="col-10 mb-3">
+                            <input class="form-control form-control" type="text" id="name-1" name="name" placeholder="Your Name *"></div>
+                        <div class="col-10 mb-3">
+                            <input class="form-control form-control" type="email" id="email-1" name="email" placeholder="Email Address *"></div>
+                        <div class="col-10 mb-3">
+                            <input class="form-control" type="password" id="password-2" name="password" placeholder="Password"></div>
+                        <div class="col col-10 d-flex flex-column"><span>Already joined us?&nbsp;<a class="form-link" href="/login" data-bs-target="/forgot pass" style="color: #ff9b0d;">Login</a></span>
+                            <div class="text-decoration-none mt-1"></div>
+                        </div>
+                        <div><button class="btn btn-primary link-secondary d-block" data-bss-hover-animate="pulse" id="contactFormButton" type="submit" style="border-radius: 0px;padding: 0.85em;font-size: 0.8em;font-family: 'Maven Pro', sans-serif;">SIGN UP</button></div>
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center" style="max-width: 100%;left: 0;position: relative;box-sizing: border-box;border: 0px;border-top: 1px solid rgb(200, 200, 200);background: #1f1f1f;">
+        <div class="container py-4 py-lg-5 px-0">
+            <div class="row d-flex justify-content-between" style="font-family: 'Maven Pro', sans-serif;">
+                <div class="col-sm-4 col-md-3 text-center d-flex flex-column">
+                    <h3 class="fs-6" style="font-family: 'Playfair Display', sans-serif;color: var(--bs-light);">About Us</h3>
+                    <ul class="list-unstyled">
+                        <li><a class="link-secondary" href="#" style="text-decoration: none;">What We Are</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center d-flex flex-column">
+                    <h3 class="fs-6" style="font-family: 'Playfair Display', sans-serif;color: var(--bs-light);">Authentication</h3>
+                    <ul class="list-unstyled">
+                        <li><a class="link-secondary" href="signup.ejs" style="text-decoration: none;">Sign-Up</a></li>
+                        <li><a class="link-secondary" href="login.ejs" style="text-decoration: none;">Login</a></li>
+                        <li><a class="link-secondary" href="#" style="text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center d-flex flex-column text-lg-flex"><ul class="list-inline" style="font-size: 1.4em;">
+                <a href="https://www.facebook.com/amalicommunity?mibextid=LQQJ4d"><li class="list-inline-item list-inline-item me-3">
+                    <svg class="bi ICON bi-facebook text-light " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20" style="height: 1.1em;width: 1.1em;padding: 4px 4px;">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                    </svg></li></a>
+                <a href="https://twitter.com/amalicommunity?s=11&amp;t=F56o5l8Xns9DXvWVLRDKZA"><li class="list-inline-item list-inline-item me-3">
+                    <svg class="bi ICON bi-twitter text-light" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20" style="height: 1.1em;width: 1.1em;padding: 4px 4px;">
+                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                    </svg></li></a>
+                <a href="https://instagram.com/amalicommunity?igshid=NTc4MTIwNjQ2YQ=="><li class="list-inline-item list-inline-item me-3">
+                    <svg class="bi ICON bi-instagram text-light" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20" style="height: 1.1em;width: 1.1em;padding: 4px 4px;">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                    </svg></li></a>
+                <a href="https://www.tiktok.com/@amalicommunity?_t=8cyGD84vVig&amp;_r=1"><li class="list-inline-item list-inline-item me-3">
+                    <svg class="bi ICON bi-tiktok text-light" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20" style="height: 1.1em;width: 1.1em;padding: 4px 4px;">
+                      <path fill-rule="evenodd" d="m9 1 1.98-.196c.144.715.54 1.813 1.235 2.708C12.895 4.389 13.797 5 15 5v2c-1.753 0-3.07-.814-4-1.829V12a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V1Z"></path>
+                    </svg></li></a>
+                <a href="https://youtube.com/@amalicommunity"><li class="list-inline-item list-inline-item me-3">
+                    <svg class="bi ICON bi-youtube text-light" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20" style="height: 1.1em;width: 1.1em;padding: 4px 4px;">
+                      <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
+                    </svg></li></a>
+              </ul>
+                    <p class="text-muted mt-2 mb-0" style="font-family: 'Akaya Kanadaka', sans-serif;font-size: 1em;user-select: none;"> Copyright © 2024 UniRide</p>
+                </div>
+                <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start d-flex justify-content-center">
+                    <div class="fw-bold d-flex align-items-center mb-2"><a class="btn d-flex navbar-brand ms-sm-0 ps-sm-5" role="button" href="index.ejs" aria-current="page" aria-label="home" style="margin-left: -3.5%;"><a class="navbar-brand d-flex align-items-center" href="index.ejs"><span class="bs-icon-sm bs-icon-rounded text-warning d-flex justify-content-center align-items-center me-2 bs-icon" style="color: rgb(255,154,11);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-96 0 512 512" width="1em" height="1em" fill="currentColor">
+            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+            <path d="M267.5 249.2C290 226.1 304 194.7 304 160c0-70.58-57.42-128-128-128h-32c-70.58 0-128 57.42-128 128c0 34.7 13.99 66.12 36.48 89.19C20.83 272.5 0 309.8 0 352c0 70.58 57.42 128 128 128h64c70.58 0 128-57.42 128-128C320 309.8 299.2 272.5 267.5 249.2zM144 96.01h32c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32c-35.3 0-64-28.7-64-64S108.7 96.01 144 96.01zM192 416H128c-35.3 0-64-28.7-64-64s28.7-64 64-64h64c35.3 0 64 28.7 64 64S227.3 416 192 416z"></path>
+        </svg></span><span class="text-light">UniRide</span></a></a></div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <script>
+
+        signupButton.addEventListener('click', () => {
+                            signupForm.querySelector('input[type="submit"]').click();
+                        });
+                        
+    </script>
+
+   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/Parallax-Scrolling.js"></script>
+</body>
+
+</html>
