@@ -37,8 +37,8 @@ router.post('/', [
 
     db.getuserid(email, function(err, result){
         var id= result[0].id;
-        var output = `<p>Dear Customer,</p>
-        <p>Dear Customer,
+        var output = `
+        <p>Dear Customer, <br>
 
         Thank you for signing up for UniRide Services. Click the link below to verify your account:
         

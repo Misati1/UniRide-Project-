@@ -111,6 +111,29 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('#loginForm');
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Fetch API or send AJAX request to submit form data to the server
+                const formData = new FormData(loginForm);
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    body: formData
+                });
+    
+                if (response.ok) {
+                    window.location.href = '/home'; // Redirect to home page upon successful login
+                } else {
+                    // Handle login failure, e.g., display error message to the user
+                    console.error('Login failed');
+                }
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
