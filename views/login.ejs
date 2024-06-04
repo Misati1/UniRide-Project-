@@ -42,27 +42,22 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8">
-                    <form class="p-3 p-xl-4 d-flex align-items-center flex-column" method="post" style="font-family: 'Maven Pro', sans-serif;">
+                    
+                       <form id="loginForm" class="p-3 p-xl-4 d-flex align-items-center flex-column" method="post" action="/login" style="font-family: 'Maven Pro', sans-serif;">
                         <div class="col-10 mb-3"><input class="form-control form-control" type="email" id="email-1" name="email" placeholder="Email Address*"></div>
                         <div class="col-10 mb-3"><input class="form-control" type="password" id="password-1" name="password" placeholder="Password*"></div>
-                        <div class="col col-10 d-flex flex-column"><span><a class="mt-1 form-link" href="/forgotpassword" data-bs-target="/forgot pass">Forgot Password?</a></span><span>New Here?Please &nbsp;<a class="form-link" href="/signup" data-bs-target="/forgot pass" style="color: #ff9b0d;">Sign Up</a></span>
-                            <div class="text-decoration-none mt-1"></div>
+                        <div class="col col-10 d-flex flex-column">
+                            <span><a class="mt-1 form-link" href="/forgotpassword" data-bs-target="/forgot pass">Forgot Password?</a></span>
+                            <span>New Here? Please &nbsp;<a class="form-link" href="/signup" data-bs-target="/forgot pass" style="color: #ff9b0d;">Sign Up</a></span>
                         </div>
-                        <div><button id="loginButton" class="btn btn-primary link-secondary d-block" data-bss-hover-animate="pulse" type="submit" style="border-radius: 0px;padding: 0.85em;font-size: 0.8em;font-family: 'Maven Pro', sans-serif;">LOGIN</button></div>   
+                        <button id="loginButton" class="btn btn-primary" type="submit">LOGIN</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginButton = document.querySelector('#loginButton');
-            loginButton.addEventListener('click', () => {
-                window.location.href = '/home'; // Redirect to home page upon login button click
-            });
-        });
-    </script>
 
     <footer class="text-center" style="max-width: 100%;left: 0;position: relative;box-sizing: border-box;border: 0px;border-top: 1px solid rgb(200, 200, 200);background: #1f1f1f;">
         <div class="container py-4 py-lg-5 px-0">

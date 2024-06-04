@@ -1,12 +1,13 @@
-const { check, validationResult } = require('express-validator');
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
-const db = require.main.require('./models/db_controller');
-const mysql = require('mysql');
 const session = require('express-session');
+const mysql = require('mysql');
 const sweetalert = require('sweetalert2');
+const db = require.main.require('./models/db_controller');
 
+// Create a MySQL connection
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -14,62 +15,61 @@ const con = mysql.createConnection({
     database: 'hmsystem'
 });
 
-router.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-}));
-
+// Middleware
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
+router.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
 
-//Define a GET route to render the login form
+// GET route to render the login form
 router.get('/', (req, res) => {
+    console.log("We are going to render the login page");
    res.render('login'); 
 });
 
- router.get('/', (req, res) => {
-     // Check if user is already logged in
-     if (req.session.loggedin) {
-         return res.redirect('/home'); // Redirect to home page if already logged in
-     }
-     res.render('login'); 
- });
+router.get('/logout', (req, res) => {
+    req.session.loggedin = false;
+    console.log("logged out!");
+   res.redirect('/login');
+});
 
-router.post('/', [
-    check('password').notEmpty().withMessage("Password is required")
-], function (req, res) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(422).json({ errors: errors.array() });
-    }
-    var username = req.body.username;
-    var password = req.body.password;
-    console.log(username);
+router.get('/lock-screen', (req, res) => {
+    req.session.lockscreen = true;
+    console.log("screen locked");
+   res.render('lockscreen');
+});
 
-    if (username && password) {
-        con.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password],
-            function (error, results, fields) {
-                if (results.length > 0) {
-                    req.session.loggedin = true;
-                    req.session.username = username;
-                    res.cookie('username', username);
-                    var status = results[0].email_status;
-                    if (status === "not verified") {
-                        res.send("Please Verify your email");
-                    } 
-                } 
-                else {
-                    res.send("Incorrect Username or Password");
-                    res.redirect('/login');
-                }
-                res.end();
-            });
-    } else {
-        sweetalert.fire('Logged in');
+router.post('/unlock-screen', (req, res) => {
+    req.session.lockscreen = false;
+    console.log("unlocked screen!");
+   res.redirect('/home');
+});
+
+// Route to handle login form submission
+router.post('/', async (req, res) => {
+    const { email, password } = req.body;
+
+        if (true) {
+        // Set session variables
+        req.session.loggedin = true;
+        req.session.lockscreen = false;
+        req.session.username = "misatisharly@gmail.com"; // Assuming email is used as username
+        // Redirect to the home page
+
+        
+        message = {
+            status: 200,
+            message: "Login successful. Welcome!",
+        };
+
+        console.log("Logged in successfully");
         res.redirect('/home');
-       // res.end();
+    } else {
+        // Handle login failure
+       return {
+        error: "Login unsuccessful",
+       };
     }
 });
+
 
 module.exports = router;

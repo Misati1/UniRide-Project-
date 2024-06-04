@@ -5,8 +5,14 @@ const router = express.Router();
 
 // Middleware to check if user is logged in
 const checkAuth = (req, res, next) => {
-  if (!req.session.userId) {
+  if (!req.session.loggedin) {
+    console.log('User is not logged in!');
     return res.redirect('/login');
+  }
+
+  if (req.session.lockscreen)
+  {
+    return res.redirect('/login/lock-screen');
   }
   next();
 };
@@ -14,11 +20,14 @@ const checkAuth = (req, res, next) => {
 // Route for the homepage
 router.get('/', checkAuth, async (req, res) => {
   try {
-    const user = await User.findById(req.session.userId);
-    if (!user) {
+    const user = {
+      username: req.session.username,
+    };
+
+        if (!user) {
       return res.status(404).send('User not found');
     }
-    res.render('home', { user });
+    res.render('home');
   } catch (err) {
     console.error(err);
     res.status(500).send('Error loading user data');

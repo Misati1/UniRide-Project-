@@ -11,17 +11,17 @@ router.get('/', function(req, res){
     res.render('forgotpassword.ejs');
 })
 
-router.post('/', function(req, res){
-    var email = request.boody.email;
+router.post('/forgotpassword', function(req, res){
+    var email = request.body;
     db.findOne(email, function(err, resultone){
         if(!resultone){
             console.log("Email does not exist");
             response.send("Mail does not exist");
         }
-        var id = resultone[0].id;
-        var email = resultone[0].email;
-        var token = randomToken(8);
-        db.temp(id, email, token, function(err, resulttwo){
+        //var id = resultone[0].id;
+        //var email = resultone[0].email;
+        //var token = randomToken(8);
+        //db.temp(id, email, token, function(err, resulttwo){
             var output = `<p>Dear User,</p>
         <p>Dear Customer,
 
@@ -56,7 +56,7 @@ router.post('/', function(req, res){
 
         })
     })
-    res.sendFile("The password reset link has been sent to your email address")
-})
+   // response.sendFile("The password reset link has been sent to your email address")
+
 
 module.exports= router;

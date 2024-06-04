@@ -38,7 +38,10 @@ module.exports.verify= function(id,username, email, token, callback){
     con.query(query, callback)
 }
 
-
+module.exports.getuserEmail= function(email,callback){
+    var query= "SELECT * FROM `verify` WHERE email = '"+email+"'"
+    con.query(query, callback)
+}
 
 module.exports.getuserid= function(email,callback){
     var query= "SELECT * FROM `verify` WHERE email = '"+email+"'"
@@ -62,7 +65,7 @@ module.exports.updateverify = function(email, email_status, callback){
 }
 
 module.exports.findOne = function(email, callback){
-    var query = "select * users where email = '"+email+"'"
+    var query = "select * FROM verify where email = '"+email+"'"
     con.query(query, callback);
     console.log(query);
 }
